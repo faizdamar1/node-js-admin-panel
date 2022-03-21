@@ -1,9 +1,12 @@
 'use strict'
 
 module.exports = function (app) {
+    /* Test route index */
+    const homeController = require('../controller/homeController')
+    app.route('/').get(homeController.index)
+
     /* Auth route */
-    const authController = require('../controller/authController')
-    app.route('/').get(authController.index)
+    app.use('/auth', require('./authRouter'))
 
     /* Route Example Group */
     app.use('/example', require('./exampleRouter'))

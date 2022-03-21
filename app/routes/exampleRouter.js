@@ -1,12 +1,12 @@
 var express = require('express')
-var exampleRoute = require('../controller/exampleController')
+var exampleController = require('../controller/exampleController')
 var router = express.Router()
-var verifikasi = require('../../middleware/index')
+const verifikasi = require('../../middleware/index')
 
-router.get('/', exampleRoute.index)
-router.post('/store', exampleRoute.create)
-router.get('/edit/:id', exampleRoute.findById)
-router.put('/update/:id', exampleRoute.update)
-router.delete('/delete/:id', exampleRoute.delete)
+router.get('/', exampleController.index)
+router.post('/store', exampleController.create)
+router.get('/edit/:id', exampleController.findById)
+router.put('/update/:id', exampleController.update)
+router.delete('/delete/:id', exampleController.delete)
 
 module.exports = router
